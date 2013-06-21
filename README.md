@@ -18,4 +18,10 @@ And start the server:
 $ boxcars config.json
 ```
 
+To specify the port:
+
+```bash
+$ boxcars config.json -port=8001
+```
+
 ![](http://i.cloudup.com/rH_0UwNYg1.jpg)
