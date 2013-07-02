@@ -11,7 +11,7 @@ func OnRequest(w http.ResponseWriter, r *http.Request) {
 	table := Sites()
 	server, defined := table[hostname]
 
-	fmt.Printf("New request to %s", hostname)
+	debug("New request to %s/%s", hostname, r.URL)
 
 	if defined {
 		server.ServeHTTP(w, r)

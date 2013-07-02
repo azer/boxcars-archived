@@ -1,0 +1,7 @@
+package boxcars
+
+import (
+	."github.com/azer/debug"
+)
+
+var debug = DebugScope("boxcars")
