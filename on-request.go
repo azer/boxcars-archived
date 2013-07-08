@@ -11,7 +11,7 @@ func OnRequest(w http.ResponseWriter, r *http.Request) {
 	table := Sites()
 	server, defined := table[hostname]
 
-	debug("New request to %s/%s", hostname, r.URL)
+	debug("Routing to %s%s", r.Host, r.URL)
 
 	if defined {
 		server.ServeHTTP(w, r)

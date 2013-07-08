@@ -1,5 +1,4 @@
-boxcars is my attempt to rewrite [door](http://github.com/azer/door) in Go. At this point,
-it's only capable of serving static websites. I'll add HTTP proxying soon.
+boxcars is a handy web server with easy static serving and reverse proxy configuration.
 
 ## Usage
 
@@ -8,7 +7,7 @@ Create a configuration file:
 ```json
 {
   "foo.com": "/home/you/sites/foo.com",
-  "bar.net": "/home/you/sites/bar.net"
+  "bar.net": "localhost:8080"
 }
 ```
 
