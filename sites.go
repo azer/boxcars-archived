@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"os"
 	"regexp"
 )
 
 var (
+	config string
 	doc map[string]string
 	handlers map[string]http.Handler
 	initialized bool = false
@@ -20,11 +20,12 @@ var (
 func Load (filename string) {
 	debug("Loading %s", filename)
 
+	config = filename
 	content, err := ioutil.ReadFile(filename)
 
 	if err != nil {
 		debug("Failed to read %s", filename)
-		os.Exit(1)
+		return;
 	}
 
 	err = json.Unmarshal(content, &doc)
@@ -34,7 +35,6 @@ func Load (filename string) {
 func Sites () (table map[string]http.Handler) {
 
 	if initialized {
-		debug("Returning from cache.")
 		table = handlers
 		return
 	}

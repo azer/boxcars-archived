@@ -24,5 +24,6 @@ func main() {
 	}
 
 	go boxcars.Load(filename)
+	go boxcars.AutoReload()
 	boxcars.Listen(port)
 }

@@ -15,6 +15,7 @@ func OnRequest(w http.ResponseWriter, r *http.Request) {
 
 	if defined {
 		server.ServeHTTP(w, r)
+		return
 	}
 
 	fmt.Fprintf(w, "404 - Not found.")
