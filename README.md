@@ -24,4 +24,16 @@ To specify the port:
 $ boxcars config.json -port=8001
 ```
 
+To enable very verbose mode:
+
+```bash
+$ DEBUG=* boxcars config.json
+```
+
+Less verbose:
+
+```bash
+$ DEBUG=server,sites boxcars config.json
+```
+
 ![](http://i.cloudup.com/rH_0UwNYg1.jpg)
