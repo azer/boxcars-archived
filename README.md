@@ -24,6 +24,8 @@ To specify the port:
 $ boxcars config.json -port=8001
 ```
 
+## Logging
+
 To enable very verbose mode:
 
 ```bash
