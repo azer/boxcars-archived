@@ -2,7 +2,7 @@ boxcars is a handy web server with easy static serving and reverse proxy configu
 
 ## Usage
 
-Create a configuration file:
+Create a configuration file *(feel free to change later. Boxcars will be reloading it automatically)*:
 
 ```json
 {
