@@ -7,7 +7,8 @@ Create a configuration file:
 ```json
 {
   "foo.com": "/home/you/sites/foo.com",
-  "bar.net": "localhost:8080"
+  "bar.net": "localhost:8080",
+  "qux.org": "localhost:8081"
 }
 ```
 
