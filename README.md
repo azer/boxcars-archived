@@ -48,6 +48,6 @@ $ DEBUG=* boxcars config.json
 
 ## Benchmarks
 
-** [Nginx VS Boxcars](https://gist.github.com/azer/5955772)
+* [Nginx VS Boxcars](https://gist.github.com/azer/5955772)
 
 ![](http://i.cloudup.com/rH_0UwNYg1.jpg)
