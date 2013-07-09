@@ -1,4 +1,10 @@
-boxcars is a handy web server with easy static serving and reverse proxy configuration.
+handy web server with easy static serving and reverse proxy configuration.
+
+## Install
+
+```bash
+$ go install github.com/azer/boxcars/boxcars
+```
 
 ## Usage
 
