@@ -1,4 +1,4 @@
-easy to configure web server with easy static serving and reverse proxying.
+Easy-to-configure Static Web/Reverse Proxy Server in Go
 
 ## Install
 
