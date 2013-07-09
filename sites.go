@@ -25,10 +25,21 @@ func Load (filename string) {
 
 	if err != nil {
 		debug("Failed to read %s", filename)
-		return;
+		return
 	}
 
-	err = json.Unmarshal(content, &doc)
+	var parsed map[string]string
+
+	err = json.Unmarshal(content, &parsed)
+
+	if err != nil {
+		debug("Failed to parse %s", filename)
+		return
+	}
+
+	doc = parsed
+	initialized = false
+
 	return
 }
 
@@ -39,21 +50,18 @@ func Sites () (table map[string]http.Handler) {
 		return
 	}
 
-	debug("Initializing the file servers")
-
 	table = make(map[string]http.Handler)
 	handlers = table
 	initialized = true
 
 	for site, config := range doc {
-
-		if matches, _ := regexp.MatchString("^/", config); matches {
-			debug("A file server to serve %s at %s", config, site)
+		if isLocalPath(config) {
+			debug("%s is set to serve %s", site, config)
 			table[site] = http.FileServer(http.Dir(config))
 			continue
 		}
 
-		debug("A proxy server to serve %s at %s", config, site)
+		debug("%s is set to reverse proxy to %s", site, config)
 		dest, _ := url.Parse(addProtocol(config))
 		table[site] = httputil.NewSingleHostReverseProxy(dest)
 	}
@@ -67,4 +75,9 @@ func addProtocol (url string) string {
 	}
 
 	return url
+}
+
+func isLocalPath (config string) bool {
+	matches, _ := regexp.MatchString("^/", config)
+	return matches
 }
