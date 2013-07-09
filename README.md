@@ -12,9 +12,11 @@ Create a configuration file *(Boxcars will be reloading it automatically on any 
 
 ```json
 {
+  "*": "/home/you/sites/404",
   "foo.com": "/home/you/sites/foo.com",
-  "bar.net": "localhost:8080",
-  "qux.org": "localhost:8081"
+  "*.foo.com": "localhost:8000",
+  "qux.org": "localhost:8081",
+  "w.com": "wikipedia.org"
 }
 ```
 
