@@ -29,6 +29,21 @@ func handlerOf (request *http.Request) (http.Handler, bool) {
 		return handler, true
 	}
 
+	parts := strings.Split(hostname, ".")
+	parts[0] = "*"
+	wildcard := strings.Join(parts, ".")
+	handler, defined = table[wildcard]
+
+	if defined {
+		return handler, true
+	}
+
+	handler, defined = table["*"]
+
+	if defined {
+		return handler, true
+	}
+
 	return nil, false
 }
 
