@@ -1,4 +1,4 @@
-handy web server with easy static serving and reverse proxy configuration.
+easy to configure web server with easy static serving and reverse proxying.
 
 ## Install
 
@@ -34,16 +34,20 @@ $ boxcars config.json -port=8001
 
 ## Logging
 
-To enable very verbose mode:
+To enable logging for specific modules: 
+
+```bash
+$ DEBUG=server,sites boxcars config.json
+```
+
+To enable very verbose mode (not recommended):
 
 ```bash
 $ DEBUG=* boxcars config.json
 ```
 
-Less verbose:
+## Benchmarks
 
-```bash
-$ DEBUG=server,sites boxcars config.json
-```
+** [Nginx VS Boxcars](https://gist.github.com/azer/5955772)
 
 ![](http://i.cloudup.com/rH_0UwNYg1.jpg)
