@@ -3,7 +3,7 @@ Easy-to-configure Static Web/Reverse Proxy Server in Go
 ## Install
 
 ```bash
-$ go install github.com/azer/boxcars/boxcars
+$ go get github.com/azer/boxcars/boxcars
 ```
 
 ## Usage
