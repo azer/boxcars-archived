@@ -40,7 +40,7 @@ $ boxcars -port=8001 config.json
 **Always enable secure mode when running as sudo:**
 
 ```bash
-$ sudo boxcars -port=80 config.json
+$ sudo boxcars -port=80 -secure config.json
 ```
 
 You can change the configuration anytime during boxcars running. 
