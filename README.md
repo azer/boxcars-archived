@@ -1,5 +1,7 @@
 Easy-to-configure Static Web/Reverse Proxy Server in Go
 
+![](http://i.cloudup.com/i5Tpn00lCc.png)
+
 ## Install
 
 ```bash
