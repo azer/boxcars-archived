@@ -45,7 +45,7 @@ func reloadConfig (raw ConfigRaw) {
 		switch t:= options.(type) {
 		case string:
 			config[hostname] = make(map[string]string)
-			config[hostname]["*"] = t
+			config[hostname]["/"] = t
 		case map[string]interface{}:
 			config[hostname] = make(map[string]string)
 
