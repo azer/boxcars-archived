@@ -36,7 +36,7 @@ func SetFilename (input string) {
 }
 
 func reloadConfig (raw ConfigRaw) {
-	debug("Setting up the config document")
+	debug("Loading...")
 
 	config := make(Config)
 
