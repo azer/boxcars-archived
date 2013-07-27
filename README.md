@@ -17,9 +17,8 @@ Create a configuration file *(it'll be auto-loading changes once you start)*  li
   "foo.com": "/home/you/sites/foo.com",
   "*.bar.net": "localhost:8080",
   "qux.org": {
-    "/favicon.ico": "sites/qux.org/static/favicon.ico",
-    "/logo.jpg": "sites/qux.org/static/logo.jpg",
-    "/static": "sites/qux.org/static",
+    "/static": "/home/you/qux.org/static",
+    "/favicon.ico": "/home/you/qux.org/static/favicon.ico",
     "*": "localhost:3000"
   }
 }
