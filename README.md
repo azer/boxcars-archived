@@ -8,7 +8,7 @@ $ go get github.com/azer/boxcars/boxcars
 
 ## Usage
 
-Create a configuration file *(Boxcars will be reloading it automatically on any changes)*  like the below example;
+Create a configuration file *(it'll be auto-loading changes once you start)*  like the below example;
 
 ```json
 {
