@@ -81,11 +81,13 @@ To set a custom 404 page for a static server:
 
 ## Security
 
-Once you enable `-secure`, boxcars switches from root user to a basic user after starting the server.
+Once you enable `-secure`, boxcars switches from root user to a basic user after starting the server on specified port. 
 
 ```bash
 $ sudo boxcars -port=80 -secure example.json
 ```
+
+UID and GID is set to 1000 by default. You can specify by -uid and -gid parameters.
 
 ## Logging
 
