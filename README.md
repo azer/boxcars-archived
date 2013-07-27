@@ -83,7 +83,7 @@ $ DEBUG=server,sites boxcars config.json
 To silentize:
 
 ```bash
-$ DEBUG=! boxcars config.json
+$ DEBUG=. boxcars config.json
 ```
 
 To enable very verbose mode (not recommended):
