@@ -14,8 +14,6 @@ func AutoReload () {
 		return
 	}
 
-	done := make(chan bool)
-
 	go func() {
 		for {
 			select {
@@ -32,8 +30,4 @@ func AutoReload () {
 	if err != nil {
 		debug("Failed to monitor changes on %s", filename)
 	}
-
-	<-done
-
-	watcher.Close()
 }
