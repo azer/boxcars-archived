@@ -1,58 +1,18 @@
 package boxcars
 
 import (
-	"fmt"
 	"net/http"
-	"strings"
 )
 
 func OnRequest(w http.ResponseWriter, r *http.Request) {
 	debug("Routing %s%s", r.Host, r.URL)
 
-	server, found := handlerOf(r)
+	server, found := matchingServerOf(r.Host, r.URL.String())
 
 	if found {
 		server.ServeHTTP(w, r)
 		return
 	}
 
-	fmt.Fprintf(w, "404 - Not found.")
-}
-
-func handlerOf (request *http.Request) (http.Handler, bool) {
-	table := Sites()
-
-	hostname := hostnameOf(request)
-	handler, defined := table[hostname]
-
-	if defined {
-		return handler, true
-	}
-
-	parts := strings.Split(hostname, ".")
-	parts[0] = "*"
-	wildcard := strings.Join(parts, ".")
-	handler, defined = table[wildcard]
-
-	if defined {
-		return handler, true
-	}
-
-	handler, defined = table["*"]
-
-	if defined {
-		return handler, true
-	}
-
-	return nil, false
-}
-
-func hostnameOf (request *http.Request) string {
-	hostname := strings.Split(request.Host, ":")[0]
-
-	if hostname[0:4] == "www." {
-		hostname = hostname[4:]
-	}
-
-	return hostname
+	http.NotFound(w, r)
 }

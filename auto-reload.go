@@ -11,6 +11,7 @@ func AutoReload () {
 
 	if err != nil {
 		debug("Failed to setup fsnotify")
+		return
 	}
 
 	done := make(chan bool)
@@ -19,17 +20,17 @@ func AutoReload () {
 		for {
 			select {
 			case ev := <-watcher.Event:
-				debug("%s has been updated. Event: %s", config, ev)
-				Load(config)
+				debug("%s has been updated. Event: %s", filename, ev)
+				ReadConfig()
 			case erv := <-watcher.Error:
 				debug("Failed to monitor changes. Error: %s", erv)
 			}
 		}
 	}()
 
-	err = watcher.Watch(config)
+	err = watcher.Watch(filename)
 	if err != nil {
-		debug("Failed to monitor changes on %s", config)
+		debug("Failed to monitor changes on %s", filename)
 	}
 
 	<-done

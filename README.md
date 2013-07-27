@@ -8,15 +8,23 @@ $ go get github.com/azer/boxcars/boxcars
 
 ## Usage
 
-Create a configuration file *(Boxcars will be reloading it automatically on any changes)*:
+Create a configuration file *(Boxcars will be reloading it automatically on any changes)*  like the below example;
 
 ```json
 {
-  "*": "/home/you/sites/404",
   "foo.com": "/home/you/sites/foo.com",
-  "*.foo.com": "localhost:8000",
-  "qux.org": "localhost:8081",
-  "w.com": "wikipedia.org"
+  "*.bar.net": "localhost:8080",
+  "qux.org": {
+    "/favicon.ico": "sites/qux.org/static/favicon.ico",
+    "/logo.jpg": "sites/qux.org/static/logo.jpg",
+    "/static": "sites/qux.org/static",
+    "*": "localhost:3000"
+  },
+  "singlepage.com": {
+    "/api": "localhost:1337",
+    "*": "sites/singlepage.com"
+  },
+  "*": "/home/you/404.html"
 }
 ```
 

@@ -23,7 +23,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	go boxcars.Load(filename)
+	boxcars.SetFilename(filename)
+	go boxcars.ReadConfig()
 	go boxcars.AutoReload()
 	boxcars.Listen(port)
 }
