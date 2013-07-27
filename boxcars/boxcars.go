@@ -32,9 +32,10 @@ func main() {
 	boxcars.SetFilename(filename)
 	go boxcars.ReadConfig()
 	go boxcars.AutoReload()
-	boxcars.Listen(port)
 
 	if secure {
-		boxcars.Secure(user_id, group_id)
+		go boxcars.Secure(user_id, group_id)
 	}
+
+	boxcars.Listen(port)
 }
