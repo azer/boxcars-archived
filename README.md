@@ -19,12 +19,7 @@ Create a configuration file *(it'll be auto-loading changes once you start)*  li
     "/logo.jpg": "sites/qux.org/static/logo.jpg",
     "/static": "sites/qux.org/static",
     "*": "localhost:3000"
-  },
-  "singlepage.com": {
-    "/api": "localhost:1337",
-    "*": "sites/singlepage.com"
-  },
-  "*": "/home/you/404.html"
+  }
 }
 ```
 
@@ -38,6 +33,28 @@ To specify the port:
 
 ```bash
 $ boxcars config.json -port=8001
+```
+
+## Configuration Examples
+
+I use below configuration for a static single-page app that connects to an HTTP API:
+
+```json
+{
+  "singlepage.com": {
+    "/api": "localhost:1337",
+    "*": "sites/singlepage.com"
+  }
+}
+```
+
+To catch any domain:
+
+```json
+{
+  "foo.com": "localhost:1234",
+  "*": "/home/you/404.html"
+}
 ```
 
 ## Logging
