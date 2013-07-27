@@ -32,6 +32,7 @@ func ReadConfig () {
 }
 
 func SetFilename (input string) {
+	debug("Filename set to %s", input)
 	filename = input
 }
 

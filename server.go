@@ -8,5 +8,8 @@ import (
 func Listen(port int) {
 	debug("Starting at %d", port)
 	http.HandleFunc("/", OnRequest)
-	http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+	err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+	if err != nil {
+		debug("Fatal: %v", err)
+	}
 }

@@ -4,4 +4,4 @@ import (
 	."github.com/azer/debug"
 )
 
-var debug = DebugScope("boxcars", "sites", "server", "auto-reload", "config")
+var debug = DebugScope("boxcars", "sites", "server", "auto-reload", "config", "secure")
