@@ -97,16 +97,22 @@ Boxcars uses [debug](http://github.com/azer/debug) for logging. To enable loggin
 $ DEBUG=server,sites boxcars config.json
 ```
 
-To silentize:
+To see how boxcars setup the HTTP handlers for your configuration;
 
 ```bash
-$ DEBUG=. boxcars config.json
+$ DEBUG=handlers-of,sites boxcars config.json
 ```
 
 To enable very verbose mode (not recommended):
 
 ```bash
 $ DEBUG=* boxcars config.json
+```
+
+To silentize:
+
+```bash
+$ DEBUG=. boxcars config.json
 ```
 
 It'll be outputting to stderr.
