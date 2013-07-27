@@ -33,7 +33,7 @@ $ boxcars config.json
 To specify the port:
 
 ```bash
-$ boxcars config.json -port=8001
+$ boxcars -port=8001 config.json
 ```
 
 You can change the configuration anytime during boxcars running. 
