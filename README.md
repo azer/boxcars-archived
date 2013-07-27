@@ -1,4 +1,4 @@
-Easy-to-configure Static Web/Reverse Proxy Server in Go
+Easy-to-configure Static Web/Reverse Proxy Server in Go.
 
 ![](http://i.cloudup.com/i5Tpn00lCc.png)
 
@@ -36,6 +36,13 @@ To specify the port:
 $ boxcars -port=8001 config.json
 ```
 
+<a name="secure"></a>
+**Always enable secure mode when running as sudo:**
+
+```bash
+$ sudo boxcars -port=80 config.json
+```
+
 You can change the configuration anytime during boxcars running. 
 It'll be watching your file and reloading it only if it parses with no error.
 
@@ -70,6 +77,14 @@ To set a custom 404 page for a static server:
     "*": "/home/you/404.html"
   }
 }
+```
+
+## Security
+
+Once you enable `-secure`, boxcars switches from root user to a basic user after starting the server.
+
+```bash
+$ sudo boxcars -port=80 -secure example.json
 ```
 
 ## Logging
