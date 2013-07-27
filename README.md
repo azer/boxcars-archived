@@ -36,6 +36,9 @@ To specify the port:
 $ boxcars config.json -port=8001
 ```
 
+You can change the configuration anytime during boxcars running. 
+It'll be watching your file and reloading it only if it parses with no error.
+
 ## Configuration Examples
 
 I use below configuration for a static single-page app that connects to an HTTP API:
