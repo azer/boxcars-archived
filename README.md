@@ -87,4 +87,8 @@ $ DEBUG=* boxcars config.json
 
 * [Nginx VS Boxcars](https://gist.github.com/azer/5955772)
 
+## TODO
+
+* Add -daemon option.
+
 ![](http://i.cloudup.com/rH_0UwNYg1.jpg)
