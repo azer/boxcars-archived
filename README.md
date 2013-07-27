@@ -74,7 +74,7 @@ To set a custom 404 page for a static server:
 
 ## Logging
 
-To enable logging for specific modules: 
+Boxcars uses [debug](http://github.com/azer/debug) for logging. To enable logging for specific modules: 
 
 ```bash
 $ DEBUG=server,sites boxcars config.json
@@ -85,6 +85,8 @@ To enable very verbose mode (not recommended):
 ```bash
 $ DEBUG=* boxcars config.json
 ```
+
+It'll be outputting to stderr.
 
 ## Benchmarks
 
