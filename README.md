@@ -58,6 +58,17 @@ To catch any domain:
 }
 ```
 
+To set a custom 404 page for a static server:
+
+```json
+{
+  "foo.com": {
+    "/": "/home/you/sites/foo.com",
+    "*": "/home/you/404.html"
+  }
+}
+```
+
 ## Logging
 
 To enable logging for specific modules: 
