@@ -19,7 +19,7 @@ Create a configuration file *(it'll be auto-loading changes once you start)*  li
   "qux.org": {
     "/static": "/home/you/qux.org/static",
     "/favicon.ico": "/home/you/qux.org/static/favicon.ico",
-    "*": "localhost:3000"
+    "/": "localhost:3000"
   }
 }
 ```
