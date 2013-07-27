@@ -1,0 +1,13 @@
+{
+  "foo.com": "~/www/foo.com",
+  "bar.net": "localhost:1234",
+  "qux.org": {
+    "/static": "~/sites/qux.org",
+    "*": "localhost:1337"
+  },
+  "corge.at": {
+    "/api": "localhost:8080",
+    "*": "~/sites/corge.at"
+  },
+  "*": "~/sites/default"
+}
