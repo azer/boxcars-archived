@@ -87,7 +87,7 @@ Once you enable `-secure`, boxcars switches from root user to a basic user after
 $ sudo boxcars -port=80 -secure example.json
 ```
 
-UID and GID is set to 1000 by default. You can specify by -uid and -gid parameters.
+UID and GID is set to 1000 by default. Use `-uid` and `-gid` parameters to specify your own in case you need.
 
 ## Logging
 
