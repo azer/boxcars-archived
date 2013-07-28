@@ -7,10 +7,11 @@ var (
 )
 
 func SetupSites (config Config) {
-	sites = make(Sites)
+	newsites := make(Sites)
 
 	for hostname, options := range config {
 		debug("Setting up %s", hostname)
-		sites[hostname] = handlersOf(options)
+		newsites[hostname] = handlersOf(options)
 	}
+	sites = newsites
 }
