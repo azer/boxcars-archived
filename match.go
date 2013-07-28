@@ -51,7 +51,14 @@ func matchingServerOf (host, url string) (result http.Handler, found bool) {
 		}
 	}
 
-	debug("returning matching server")
+	if wildcardSite, hasWildcardSite := sites["*"]; !found && hasWildcardSite {
+		debug("No site binded to %s. Falling back to '*' entry.", hostname)
+		result, found = matchingHandlerOf(url, hostname, wildcardSite)
+	} else if !found {
+		debug("Unable to find any matching site for %s", hostname)
+	} else {
+		debug("Returning matching site for %s%s.", hostname, url)
+	}
 
 	return result, found
 }
