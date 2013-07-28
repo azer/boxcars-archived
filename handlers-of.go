@@ -4,6 +4,8 @@ import (
 	"regexp"
 	"fmt"
 	"os"
+	"os/user"
+	"strings"
 )
 
 type Handlers map[string]*Handler
@@ -12,6 +14,7 @@ func handlerOf (uri string, hasCustom404 bool, custom404 string) *Handler {
 	debug("Setting up the HTTP handler that will serve %s", uri)
 
 	handler := &Handler{ false, false, uri, nil }
+	uri = expandUser(uri)
 	isStatic := isLocalPath(uri)
 
 	if isStatic && isSingleFile(uri) {
@@ -75,4 +78,14 @@ func isSingleFile (uri string) bool {
 	}
 
 	return false
+}
+
+func expandUser(uri string) string {
+	if !strings.HasPrefix(uri, "~/") {
+		return uri
+	}
+	usr, _ := user.Current()
+	dir := usr.HomeDir
+	uri = strings.Replace(uri, "~", dir, 1)
+	return uri
 }
