@@ -51,6 +51,10 @@ func matchingServerOf (host, url string) (result http.Handler, found bool) {
 		}
 	}
 
+	if !found {
+		result, found = matchingHandlerOf(url, hostname, sites["*"]);
+	}
+
 	debug("returning matching server")
 
 	return result, found
