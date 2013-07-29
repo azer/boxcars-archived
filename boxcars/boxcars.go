@@ -29,13 +29,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	if secure {
+		boxcars.Secure(user_id, group_id)
+	}
+
 	boxcars.SetFilename(filename)
 	go boxcars.ReadConfig()
 	go boxcars.AutoReload()
-
-	if secure {
-		go boxcars.Secure(user_id, group_id)
-	}
 
 	boxcars.Listen(port)
 }
