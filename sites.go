@@ -6,7 +6,7 @@ var (
 	sites Sites
 )
 
-func SetupSites (config Config) {
+func SetupSites(config Config) {
 	newsites := make(Sites)
 
 	for hostname, options := range config {

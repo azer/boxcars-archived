@@ -4,7 +4,7 @@ import (
 	"github.com/howeyc/fsnotify"
 )
 
-func AutoReload () {
+func AutoReload() {
 	debug("Enabling")
 
 	watcher, err := fsnotify.NewWatcher()

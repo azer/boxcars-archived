@@ -1,23 +1,23 @@
 package boxcars
 
 import (
-	"regexp"
 	"fmt"
 	"os"
+	"regexp"
 )
 
 type Handlers map[string]*Handler
 
-func handlerOf (uri string, hasCustom404 bool, custom404 string) *Handler {
+func handlerOf(uri string, hasCustom404 bool, custom404 string) *Handler {
 	debug("Setting up the HTTP handler that will serve %s", uri)
 
-	handler := &Handler{ false, false, uri, nil }
+	handler := &Handler{false, false, uri, nil}
 	isStatic := isLocalPath(uri)
 
 	if isStatic && isSingleFile(uri) {
 		handler.isStatic = true
 		handler.server = newSingleFileServer(uri)
-  } else if isStatic {
+	} else if isStatic {
 		handler.isStatic = true
 		handler.server = newStaticServer(uri, hasCustom404, custom404)
 	} else {
@@ -28,7 +28,7 @@ func handlerOf (uri string, hasCustom404 bool, custom404 string) *Handler {
 	return handler
 }
 
-func handlersOf (options map[string]string) Handlers {
+func handlersOf(options map[string]string) Handlers {
 	handlers := make(Handlers)
 
 	custom404, hasCustom404 := options["*"]
@@ -48,12 +48,12 @@ func handlersOf (options map[string]string) Handlers {
 	return handlers
 }
 
-func isLocalPath (config string) bool {
+func isLocalPath(config string) bool {
 	matches, _ := regexp.MatchString("^/", config)
 	return matches
 }
 
-func isSingleFile (uri string) bool {
+func isSingleFile(uri string) bool {
 	f, err := os.Open(uri)
 
 	if err != nil {

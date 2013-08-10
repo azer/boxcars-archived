@@ -1,18 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"flag"
-	"os"
+	"fmt"
 	"github.com/azer/boxcars"
+	"os"
 )
 
 var (
 	filename string
-	port int
+	port     int
 	user_id  int
 	group_id int
-	secure bool
+	secure   bool
 )
 
 func main() {

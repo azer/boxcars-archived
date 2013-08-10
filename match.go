@@ -1,12 +1,12 @@
 package boxcars
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
-	"fmt"
 )
 
-func matchingHandlerOf (url, hostname string, handlers Handlers) (result http.Handler, found bool) {
+func matchingHandlerOf(url, hostname string, handlers Handlers) (result http.Handler, found bool) {
 
 	if handlers == nil {
 		return nil, false
@@ -35,7 +35,7 @@ func matchingHandlerOf (url, hostname string, handlers Handlers) (result http.Ha
 	return result, found
 }
 
-func matchingServerOf (host, url string) (result http.Handler, found bool) {
+func matchingServerOf(host, url string) (result http.Handler, found bool) {
 
 	hostname := hostnameOf(host)
 	wildcard := wildcardOf(hostname)
@@ -63,7 +63,7 @@ func matchingServerOf (host, url string) (result http.Handler, found bool) {
 	return result, found
 }
 
-func hostnameOf (host string) string {
+func hostnameOf(host string) string {
 	hostname := strings.Split(host, ":")[0]
 
 	if len(hostname) > 4 && hostname[0:4] == "www." {
@@ -73,7 +73,7 @@ func hostnameOf (host string) string {
 	return hostname
 }
 
-func wildcardOf (hostname string) string {
+func wildcardOf(hostname string) string {
 	parts := strings.Split(hostname, ".")
 
 	if len(parts) < 3 {
