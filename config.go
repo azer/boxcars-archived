@@ -1,8 +1,8 @@
 package boxcars
 
 import (
-	"io/ioutil"
 	"encoding/json"
+	"io/ioutil"
 )
 
 type Config map[string]map[string]string
@@ -10,7 +10,7 @@ type ConfigRaw map[string]interface{}
 
 var filename string
 
-func ReadConfig () {
+func ReadConfig() {
 	debug("Reading %s", filename)
 
 	configRaw := make(ConfigRaw)
@@ -31,18 +31,18 @@ func ReadConfig () {
 	reloadConfig(configRaw)
 }
 
-func SetFilename (input string) {
+func SetFilename(input string) {
 	debug("Filename set to %s", input)
 	filename = input
 }
 
-func reloadConfig (raw ConfigRaw) {
+func reloadConfig(raw ConfigRaw) {
 	debug("Loading...")
 
 	config := make(Config)
 
 	for hostname, options := range raw {
-		switch t:= options.(type) {
+		switch t := options.(type) {
 		case string:
 			config[hostname] = make(map[string]string)
 			config[hostname]["/"] = t

@@ -6,7 +6,7 @@ import (
 
 type Handler struct {
 	isReverseProxy bool
-	isStatic bool
-	uri string
-	server http.Handler
+	isStatic       bool
+	uri            string
+	server         http.Handler
 }
