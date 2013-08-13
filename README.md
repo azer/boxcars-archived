@@ -125,7 +125,7 @@ It'll be outputting to stderr.
 
 #### The "Too Many Open Files" Error
 
-Boxcars creates a lot of files on `/proc/$pid/fd | wc -l`. In case you see boxcars crashing, you can see how many files are open by;
+Boxcars creates a lot of files on `/proc/$pid/fd`. In case you see boxcars crashing, you can see how many files are open by;
 
 ```bash
 $ sudo ls -l /proc/`pgrep boxcars`/fd | wc -l
