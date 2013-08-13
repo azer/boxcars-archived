@@ -146,7 +146,14 @@ To find out your personal limit:
 $ ulimit -n
 ```
 
-You can change it by editing `/etc/security/limits.conf`.
+To change it:
+
+```bash
+$ ulimit -n 64000
+```
+
+
+You can change soft - hard limits by editing `/etc/security/limits.conf`.
 
 ## TODO
 
