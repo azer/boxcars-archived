@@ -121,6 +121,24 @@ It'll be outputting to stderr.
 
 * [Nginx VS Boxcars](https://gist.github.com/azer/5955772)
 
+## Troubleshooting
+
+#### The "Too Many Open Files" Error
+
+Boxcars creates a lot of files on `/proc/$pid/fd directory`. In case you see boxcars crashing, you can see how many files are open by;
+
+```bash
+$ sudo ls -l /proc/$pid/fd/. | wc -l
+```
+
+To find out your personal limit:
+
+```bash
+$ ulimit -n
+```
+
+You can change it by editing `/etc/security/limits.conf`.
+
 ## TODO
 
 * Add -daemon option.
