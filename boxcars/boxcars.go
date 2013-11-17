@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/azer/boxcars"
+	"github.com/azer/boxcars/json-config"
 	"os"
 )
 
@@ -29,9 +30,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	boxcars.SetFilename(filename)
-	go boxcars.ReadConfig()
-	go boxcars.AutoReload()
+	go func () {
+		config := JSONConfig.NewJSONConfig(filename, boxcars.SetupSites)
+		config.EnableAutoReload()
+	}()
 
 	if secure {
 		go boxcars.Secure(user_id, group_id)
