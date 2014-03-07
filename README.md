@@ -17,6 +17,8 @@ Easy-to-configure Static Web/Reverse Proxy Server in Go.
 $ go get github.com/azer/boxcars/boxcars
 ```
 
+[Works with Go v1.1+](https://github.com/azer/boxcars/issues/14)
+
 ## Usage
 
 Create a configuration file *(it'll be auto-loading changes once you start)*  like the below example;
