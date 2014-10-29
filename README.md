@@ -12,6 +12,7 @@ Easy-to-configure Static Web/Reverse Proxy Server in Go.
 * [TODO](#todo)
 
 ## Install
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/azer/boxcars?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ```bash
 $ go get github.com/azer/boxcars/boxcars
